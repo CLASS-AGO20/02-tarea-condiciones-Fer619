@@ -39,6 +39,22 @@ export default class App {
         }
         return result;
     }
+    obtenerCalificación(calificaciónNumerica){
+        let result;
+        
+        if(calificaciónNumerica === 10){
+            return "A+";
+        } else if(calificaciónNumerica === 8 && calificaciónNumerica <= 9){
+            return "A";
+        } else if(calificaciónNumerica === 6 && calificaciónNumerica <=7){
+            return "B";
+        } else if(calificaciónNumerica <=5){
+            return "C";
+        } else{
+            return "ERROR";
+        }
+        return result;
+    }
 }
 
 let app = new App();
@@ -54,3 +70,10 @@ console. log(app.calcularSalario("1"));
 console. log(app.calcularSalario("2"));
 console. log(app.calcularSalario("3"));
 console. log(app.calcularSalario("4"));
+
+console. log(app.obtenerCalificación(10));
+console. log(app.obtenerCalificación(5));
+console. log(app.obtenerCalificación(6));
+console. log(app.obtenerCalificación(8));
+console. log(app.obtenerCalificación(11));
+
