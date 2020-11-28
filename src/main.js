@@ -55,6 +55,29 @@ export default class App {
         }
         return result;
     }
+
+    obtenerCercano100(numero1, numero2, numero3){
+        let x = Math.abs(numero1 - 100)
+        let y = Math.abs(numero2 - 100)
+        let z = Math.abs(numero3 - 100)
+
+        if(x < y && x < z){
+            return numero1;
+        }
+        
+        if(y < x && y < z){
+            return numero2;
+        }
+
+        if(z < x && z < y){
+            return numero3;
+        } else{
+            return null;
+        }
+        
+     } 
+
+     
 }
 
 let app = new App();
@@ -76,4 +99,6 @@ console. log(app.obtenerCalificación(5));
 console. log(app.obtenerCalificación(6));
 console. log(app.obtenerCalificación(8));
 console. log(app.obtenerCalificación(11));
+
+console.log(app.obtenerCercano100(90, 70, 103));
 
