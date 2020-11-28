@@ -101,6 +101,20 @@ export default class App {
         return costoTotal;
      }
 
+     estaEnRango(limiteInicial, limiteFinal, numero){
+
+        let respuesta;
+
+        if(numero > limiteInicial && numero < limiteFinal){
+            respuesta = true;
+        } else if(numero > limiteInicial && numero > limiteFinal){
+            respuesta = false;
+        } else{
+            respuesta = false;
+        }
+        return respuesta;
+     }
+
      
 }
 
@@ -131,4 +145,8 @@ console. log(app.costoBoletos(6, 1));
 console. log(app.costoBoletos(5, 2));
 console. log(app.costoBoletos(3, 3));
 
+console. log(app.estaEnRango(10, 20, 15));
+console. log(app.estaEnRango(10, 20, 30));
+console. log(app.estaEnRango(10, 20, 8));
+console. log(app.estaEnRango(10, 20, 10));
 
