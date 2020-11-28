@@ -75,7 +75,31 @@ export default class App {
             return null;
         }
         
-     } 
+     }
+
+     costoBoletos(boletos, zona){
+         let costoTotal;
+
+         switch(zona){
+             case 1:
+                 costoTotal = boletos * 300;
+                 break;
+             case 2:
+                 costoTotal = boletos * 450;
+                 break;
+             case 3:
+                 costoTotal = boletos * 700;
+                 break;
+             default:
+                 costoTotal = -1;
+         }
+
+         if(costoTotal > 2000){
+             costoTotal= costoTotal * 0.93;
+         }
+
+        return costoTotal;
+     }
 
      
 }
@@ -100,5 +124,11 @@ console. log(app.obtenerCalificación(6));
 console. log(app.obtenerCalificación(8));
 console. log(app.obtenerCalificación(11));
 
-console.log(app.obtenerCercano100(90, 70, 103));
+console. log(app.obtenerCercano100(90, 70, 103));
+
+console. log(app.costoBoletos(50, 4));
+console. log(app.costoBoletos(6, 1));
+console. log(app.costoBoletos(5, 2));
+console. log(app.costoBoletos(3, 3));
+
 
